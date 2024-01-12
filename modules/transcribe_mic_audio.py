@@ -1,5 +1,6 @@
 """Sample Python script to transcribe an audio file with AssemblyAI"""
 import os
+import string
 
 import assemblyai as aai
 
@@ -28,6 +29,38 @@ def on_error(error: aai.RealtimeError):
 
 def on_close():
     print("Closing Session")
+
+
+# Annotation methods
+def annotate_word(word: str) -> str:
+    """
+    Appends a "-v" suffix if the word or token's alphabet
+    character ends with a vowel. Otherwise, append word with a "-c" suffix.
+
+    Parameter
+    ---------
+    word: str
+        Input word to annotate
+
+    Returns
+    -------
+    annotated_word: str
+        Annotated word with either a "-v" or "-c" suffix
+    """
+    # Define vowel set
+    vowels = ("a", "e", "i", "o", "u", "A", "E", "I", "O", "U")
+
+    # Remove any punctuation character
+    translator = str.maketrans("", "", string.punctuation)
+    cleaned_word = word.translate(translator)
+
+    # Annotate word based on its last alphabet character
+    if cleaned_word.endswith(vowels):
+        annotated_word = word + "-v"
+        return annotated_word
+    else:
+        annotated_word = word + "-c"
+        return annotated_word
 
 
 def main():
