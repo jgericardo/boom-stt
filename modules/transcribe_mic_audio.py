@@ -7,6 +7,7 @@ import assemblyai as aai
 aai.settings.api_key = os.getenv("AAI_API_KEY")
 
 
+# Define event handling for AssemblyAI streaming events
 def on_open(session_opened: aai.RealtimeSessionOpened):
     print("Session ID:", session_opened.session_id)
 
