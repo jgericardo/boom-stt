@@ -63,6 +63,26 @@ def annotate_word(word: str) -> str:
         return annotated_word
 
 
+def annotate_text(text: str) -> str:
+    """
+    Annotates every word or token in a transcription/text.
+
+    Parameter
+    ---------
+    text: str
+        Input text to annotate
+
+    Returns
+    -------
+    annotated_text: str
+        Annotated texts
+    """
+    tokens = text.split()
+    annotated_tokens = list(map(lambda token: annotate_word(token), tokens))
+    annotated_text = " ".join(annotated_tokens)
+    return annotated_text
+
+
 def main():
     transcriber = aai.RealtimeTranscriber(
         sample_rate=16_000,
