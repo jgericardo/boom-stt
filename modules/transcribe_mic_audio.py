@@ -17,10 +17,14 @@ def on_data(transcript: aai.RealtimeTranscript):
     if not transcript.text:
         return
 
+    transcribed_text = transcript.text
+    annotated_text = annotate_text(transcribed_text)
     if isinstance(transcript, aai.RealtimeFinalTranscript):
-        print(transcript.text, end="\r\n")
+        print(f"Transcribed text:\n{transcribed_text}", end="\r\n")
+        print(f"Annotated text:\n{annotated_text}", end="\r\n")
     else:
-        print(transcript.text, end="\r")
+        print(f"Transcribed text:\n{transcribed_text}", end="\r")
+        print(f"Annotated text:\n{annotated_text}", end="\r")
 
 
 def on_error(error: aai.RealtimeError):
