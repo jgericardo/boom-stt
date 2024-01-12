@@ -1,0 +1,22 @@
+[tool.poetry]
+name = "boom-stt"
+version = "0.1.0"
+description = ""
+authors = ["Justin Gerard Ricardo <justinericardo@gmail.com>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.11"
+assemblyai = "^0.20.2"
+
+[tool.poetry.group.dev.dependencies]
+pytest = "^7.4.4"
+pre-commit = "^3.6.0"
+black = "^23.12.1"
+flake8 = "^7.0.0"
+isort = "^5.13.2"
+ipython = "^8.20.0"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
