@@ -1,4 +1,4 @@
-"""Sample Python script to transcribe an audio file with AssemblyAI"""
+"""Sample Python script to transcribe audio from a mic stream with AssemblyAI"""
 import os
 import string
 
