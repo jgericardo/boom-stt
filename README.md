@@ -31,6 +31,12 @@ $ brew install portaudio
 $ apt install portaudio19-dev
 ```
 
+To avoid exposing of your API key, add it as an environment variable/secret,
+
+```shell
+$ export AAI_API_KEY="<your-API-key>"
+```
+
 ## Usage
 
 To transcribe an audio file, run the script below
