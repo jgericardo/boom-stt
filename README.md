@@ -4,20 +4,31 @@ A Speech-to-text transcription service using AssemblyAI.
 
 ## Setup
 
+- Python version: `Python 3.11.4`
+- Virtual environment (pyenv): `pyenv 2.3.25`
+- Poetry: `1.6.1`
+
+If you have PyEnv installed, you may create a virtual environment from the project repo,
+
+```shell
+$ pyenv virtualenv 3.11.4 "<your-venv-name>"
+$ pyenv local "<your-venv-name>"
+```
+
 To install dependencies using Poetry,
 
 ```shell
-poetry install
+$ poetry install
 ```
 
 Additional dependencies from AssemblyAI,
 
 ```shell
 # (Mac)
-brew install portaudio
+$ brew install portaudio
 
 # (Debian/Ubuntu)
-apt install portaudio19-dev
+$ apt install portaudio19-dev
 ```
 
 ## Usage
